@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0 15px;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+.button1, .button2, .button {
+  font-size: 18px;
+  padding: 6px 14px;
+  margin: 8px 4px;
+  cursor: pointer;
+}
+
+.button2:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none;
+}
+
+#apiKeyInput {
+  font-size: 15px;
+  padding: 6px 10px;
+}
+
+.apod-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.apod-row .media-wrap {
+  flex: 1;
+  min-width: 0;
+}

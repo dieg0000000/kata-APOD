@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kata APOD</title>
+<meta name="description" content="Un navigateur alternatif pour l'Astronomy Picture of the Day (APOD) de la NASA.">
+<meta name="author" content="Diego Rodriguez">
+<meta name="keywords" content="APOD, NASA, astronomie, kata, EPFL">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <header class="topbar">
+    <h1>Astronomy Picture of the Day</h1>
+  </header> 
+
+  <div id="settingsPanel" class="settings-panel">
+    <label for="apiKeyInput">NASA API Key</label>
+    <div class="settings-row">
+      <input id="apiKeyInput" type="text" value ="">
+      <button id="apiKeySave" class="button">Save</button>
+    </div>
+    </div>
+
+  <main id="card" class="card">
+    <div class="status">Loading…</div>
+  </main>
+<button onclick="share()" class="button">Copy Link</button>
+
+  <footer>
+    Source code available on
+    <a href="https://github.com/dieg0000000/kata-APOD" target="_blank" rel="noopener">https://github.com/dieg0000000/kata-APOD</a>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
