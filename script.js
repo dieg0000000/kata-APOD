@@ -56,6 +56,5 @@ function share() {
 }
 
 apiKeySave.onclick = load;
-apiKeyInput.value = localStorage.getItem("apod_api_key") || "";
 
 load();
