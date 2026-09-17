@@ -1,6 +1,6 @@
-
-//Prend la date du jour
-let date = new Date().toISOString().slice(0, 10);
+//Récupère la date depuis l'URL si elle existe, sinon prend la date du jour
+const params = new URLSearchParams(window.location.search);
+let date = params.get("date") || today();
 
 //Garde la date en AAAA-MM-JJ (10 premiers elements de la date)
 function today() {
@@ -8,24 +8,27 @@ function today() {
 }
 
 function load() {
+  //Empêche d'aller dans le futur
+  if (date > today()) {
+    date = today();
+  }
 
   //Récupère la clé API dans le champ "Clé API NASA" ou utilise la clé de démo
-  const key = document.getElementById("apiKeyInput").value ||  "DEMO_KEY";
-  
+  const key = "kMXzwtifUEGhfoggXq0phKxDr9Bc5q8C8sdGFP1V";
+
   //Met à jour l'URL et le titre de la page avec la date de aujourd'hui
   history.replaceState({}, "", "?date=" + date);
   document.title = "Kata APOD " + date;
 
   //Récupère les données de l'API APOD pour la date donnée
   fetch(`https://api.nasa.gov/planetary/apod?api_key=${key}&date=${date}`)
-    
-  //Si la réponse est OK, on parse le JSON et on met à jour le contenu de la carte
-  .then(res => res.json())
-    .then(data => {
-      
-      const media = data.media_type === "video"
-  ? `<div class="media-wrap"><a href="${data.url}" target="_blank">Voir la vidéo</a></div>`
-  : `<div class="media-wrap"><img src="${data.url}"><a class="hd-link" href="${data.hdurl || data.url}" target="_blank">Voir HD</a></div>`;
+    //Si la réponse est OK, on parse le JSON et on met à jour le contenu de la carte
+    .then((res) => res.json())
+    .then((data) => {
+      const media =
+        data.media_type === "video"
+          ? `<div class="media-wrap"><a href="${data.url}" target="_blank">Voir la vidéo</a></div>`
+          : `<div class="media-wrap"><img src="${data.url}"><a class="hd-link" href="${data.hdurl || data.url}" target="_blank">Voir HD</a></div>`;
 
       //Met à jour le contenu de la carte avec les données de l'API
       card.innerHTML = `
@@ -39,8 +42,7 @@ function load() {
   <p><b>${data.copyright}</b></p>
   <p>${data.explanation}</p>
 `;
-    }
-  )
+    });
 }
 
 function change(n) {
