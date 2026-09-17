@@ -117,7 +117,11 @@ n'est qu'un moyen parmis beaucoup d'autres.
 - [@Jch4ipas](https://github.com/Jch4ipas): [code](https://github.com/Jch4ipas/kata-APOD) / [app](https://jch4ipas.github.io/kata-APOD/)  
   Vanilla JS
 
-- [@octocat](https://github.com/octocat): [code](https://#) / [app](https://#)  
+- [@octocat](https://github.com/octocat): [code](https://#) / [app](https://#)
+
+- - [@dieg0000000](https://github.com/dieg0000000): [code](https://github.com/dieg0000000/Kata-APOD) / [app](https://dieg0000000.github.io/kata-APOD/)
+  Vanilla JS
+
   Une petite présentation de votre version, par exemple quelles technologies
   vous avez utilisées, qu'est-ce que votre version a de mieux que
   l'[originale](https://apod.nasa.gov/apod/astropix.html), etc...
