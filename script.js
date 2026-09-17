@@ -14,7 +14,7 @@ function load() {
   }
 
   //Récupère la clé API dans le champ "Clé API NASA" ou utilise la clé de démo
-  const key = "kMXzwtifUEGhfoggXq0phKxDr9Bc5q8C8sdGFP1V";
+  const key = document.getElementById("apiKeyInput").value ||  "DEMO_KEY";
 
   //Met à jour l'URL et le titre de la page avec la date de aujourd'hui
   history.replaceState({}, "", "?date=" + date);
